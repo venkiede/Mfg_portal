@@ -1,0 +1,67 @@
+[
+  {
+    "id": 1,
+    "title": "Design Specs V2",
+    "type": "Document",
+    "author": "Alice Morgan",
+    "date": "2026-02-25",
+    "metadata": { "version": "2.0", "department": "Engineering", "tags": ["design", "specs"] },
+    "replies": 12,
+    "approval_required": true,
+    "approval": "Pending Approval",
+    "lifecycle": "In Review",
+    "sla_hours": 48
+  },
+  {
+    "id": 2,
+    "title": "QA Test Plan",
+    "type": "Document",
+    "author": "Ben Clarke",
+    "date": "2026-02-24",
+    "metadata": { "version": "1.0", "department": "Quality", "tags": ["qa", "testing"] },
+    "replies": 5,
+    "approval_required": false,
+    "approval": "Approved",
+    "lifecycle": "Published",
+    "sla_hours": 24
+  },
+  {
+    "id": 3,
+    "title": "Marketing Assets",
+    "type": "Document",
+    "author": "Carol Wu",
+    "date": "2026-02-23",
+    "metadata": { "version": "3.0", "department": "Marketing", "tags": ["assets", "brand"] },
+    "replies": 8,
+    "approval_required": true,
+    "approval": "Pending Approval",
+    "lifecycle": "Draft",
+    "sla_hours": 72
+  },
+  {
+    "id": 4,
+    "title": "Final Handover Document",
+    "type": "Approval",
+    "author": "Alice Morgan",
+    "date": "2026-02-22",
+    "metadata": { "version": "1.0", "department": "PMO", "tags": ["handover", "closure"] },
+    "replies": 3,
+    "approval_required": true,
+    "approval": "Approved",
+    "lifecycle": "Published",
+    "sla_hours": 12
+  },
+  {
+    "id": 5,
+    "title": "Project Timeline Update",
+    "type": "Thread",
+    "author": "Ben Clarke",
+    "date": "2026-02-21",
+    "metadata": { "version": "1.0", "department": "PMO", "tags": ["timeline", "update"] },
+    "replies": 15,
+    "approval_required": false,
+    "approval": "N/A",
+    "lifecycle": "Open",
+    "sla_hours": 6
+  }
+]

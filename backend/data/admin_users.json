@@ -1,0 +1,82 @@
+[
+  {
+    "id": "u1",
+    "name": "Admin User",
+    "email": "admin@mfg.io",
+    "role": "Admin",
+    "status": "Active",
+    "last_login": "2026-02-27",
+    "created": "2025-01-10",
+    "department": "IT"
+  },
+  {
+    "id": "u2",
+    "name": "Jane Engineer",
+    "email": "jane@mfg.io",
+    "role": "Engineer",
+    "status": "Inactive",
+    "last_login": "2026-02-26",
+    "created": "2025-03-15",
+    "department": "R&D"
+  },
+  {
+    "id": "u3",
+    "name": "Tom Viewer",
+    "email": "tom@mfg.io",
+    "role": "Viewer",
+    "status": "Inactive",
+    "last_login": "2026-02-24",
+    "created": "2025-06-01",
+    "department": "Operations"
+  },
+  {
+    "id": "u4",
+    "name": "Client Acme",
+    "email": "acme@client.io",
+    "role": "Customer",
+    "status": "Active",
+    "last_login": "2026-02-20",
+    "created": "2025-08-12",
+    "department": "External"
+  },
+  {
+    "id": "u5",
+    "name": "Sara QA",
+    "email": "sara@mfg.io",
+    "role": "Engineer",
+    "status": "Active",
+    "last_login": "2026-02-25",
+    "created": "2025-04-02",
+    "department": "Quality"
+  },
+  {
+    "id": "u6",
+    "name": "Mike Ops",
+    "email": "mike@mfg.io",
+    "role": "Viewer",
+    "status": "Active",
+    "last_login": "2026-01-10",
+    "created": "2025-07-20",
+    "department": "Operations"
+  },
+  {
+    "id": "u7",
+    "name": "Linda PM",
+    "email": "linda@mfg.io",
+    "role": "Engineer",
+    "status": "Active",
+    "last_login": "2026-02-27",
+    "created": "2025-02-28",
+    "department": "Project Mgmt"
+  },
+  {
+    "id": "u8",
+    "name": "Client Beta",
+    "email": "beta@client.io",
+    "role": "Customer",
+    "status": "Active",
+    "last_login": "2026-02-18",
+    "created": "2025-09-01",
+    "department": "External"
+  }
+]

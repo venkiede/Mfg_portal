@@ -1,0 +1,71 @@
+[
+    {
+        "id": "QM001",
+        "type": "Certification",
+        "title": "ISO 9001:2015",
+        "standard": "ISO",
+        "issued_by": "Bureau Veritas",
+        "issue_date": "2023-09-01",
+        "expiry_date": "2026-08-31",
+        "status": "Active",
+        "owner": "Carol Wu",
+        "scope": "Design, manufacture and service of electronic assemblies",
+        "ncr_count": 0,
+        "next_audit": "2026-05-15"
+    },
+    {
+        "id": "QM002",
+        "type": "NCR",
+        "title": "Solder Paste Contamination — Line 3",
+        "standard": "IATF 16949",
+        "issued_by": "Internal",
+        "issue_date": "2026-02-10",
+        "expiry_date": null,
+        "status": "Open",
+        "owner": "Ben Clarke",
+        "capa_due": "2026-03-10",
+        "ncr_count": 1
+    },
+    {
+        "id": "QM003",
+        "type": "CAPA",
+        "title": "Root Cause: Wrong Pin Crimp — Plant C",
+        "standard": "Internal",
+        "issued_by": "QA Team",
+        "issue_date": "2026-01-25",
+        "expiry_date": null,
+        "status": "In Review",
+        "owner": "Alice Morgan",
+        "capa_due": "2026-02-28",
+        "ncr_count": 0
+    },
+    {
+        "id": "QM004",
+        "type": "Certification",
+        "title": "IATF 16949:2016",
+        "standard": "IATF",
+        "issued_by": "TÜV Rheinland",
+        "issue_date": "2024-03-01",
+        "expiry_date": "2026-04-10",
+        "status": "Expiring Soon",
+        "owner": "Ella Santos",
+        "scope": "Automotive electronics — Monterrey plant",
+        "ncr_count": 2,
+        "next_audit": "2026-03-20"
+    },
+    {
+        "id": "QM005",
+        "type": "Audit",
+        "title": "External Surveillance Audit — ISO 9001",
+        "standard": "ISO",
+        "issued_by": "Bureau Veritas",
+        "issue_date": "2026-01-14",
+        "expiry_date": null,
+        "status": "Closed",
+        "owner": "Carol Wu",
+        "findings": 0,
+        "observation_count": 3,
+        "ncr_count": 0,
+        "next_audit": "2027-01-14"
+    }
+]

@@ -1,0 +1,68 @@
+[
+    {
+        "id": "AP001",
+        "type": "Project Stage Change",
+        "entity": "PT001",
+        "entity_name": "Gen-3 Hydraulic Control Unit",
+        "requested_by": "Jane Engineer",
+        "requested_at": "2026-02-27T08:00:00",
+        "detail": "Move from NPI → Production",
+        "status": "Pending",
+        "priority": "High"
+    },
+    {
+        "id": "AP002",
+        "type": "Quality Closure",
+        "entity": "QM002",
+        "entity_name": "Solder Paste Contamination NCR",
+        "requested_by": "Sara QA",
+        "requested_at": "2026-02-26T15:00:00",
+        "detail": "Close NCR after CAPA verification",
+        "status": "Pending",
+        "priority": "High"
+    },
+    {
+        "id": "AP003",
+        "type": "Compliance Renewal",
+        "entity": "QM004",
+        "entity_name": "IATF 16949:2016 Certification",
+        "requested_by": "Linda PM",
+        "requested_at": "2026-02-26T10:30:00",
+        "detail": "Initiate renewal — expiry in 6 weeks",
+        "status": "Pending",
+        "priority": "Critical"
+    },
+    {
+        "id": "AP004",
+        "type": "ECO Change",
+        "entity": "ECO008",
+        "entity_name": "ECO #008 — New Heat Shield BOM",
+        "requested_by": "Jane Engineer",
+        "requested_at": "2026-02-25T09:00:00",
+        "detail": "Add heat shield component to PT001 BOM",
+        "status": "Approved",
+        "priority": "Medium"
+    },
+    {
+        "id": "AP005",
+        "type": "Project Stage Change",
+        "entity": "PT002",
+        "entity_name": "Smart Sensor Module R&D",
+        "requested_by": "Linda PM",
+        "requested_at": "2026-02-24T14:00:00",
+        "detail": "Move IP Review milestone to Completed",
+        "status": "Rejected",
+        "priority": "Low"
+    },
+    {
+        "id": "AP006",
+        "type": "Quality Closure",
+        "entity": "QM003",
+        "entity_name": "Wrong Pin Crimp CAPA",
+        "requested_by": "Sara QA",
+        "requested_at": "2026-02-27T09:30:00",
+        "detail": "CAPA actions verified, request closure",
+        "status": "Pending",
+        "priority": "High"
+    }
+]

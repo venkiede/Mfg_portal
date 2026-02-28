@@ -1,0 +1,112 @@
+[
+    {
+        "id": "L001",
+        "timestamp": "2026-02-27T09:15:33",
+        "user": "Jane Engineer",
+        "user_id": "u2",
+        "module": "Project Tracking",
+        "action": "Updated",
+        "entity": "PT001",
+        "detail": "Milestone 'Proto Build' marked In Progress",
+        "ip": "192.168.1.21"
+    },
+    {
+        "id": "L002",
+        "timestamp": "2026-02-27T08:42:10",
+        "user": "Admin User",
+        "user_id": "u1",
+        "module": "User Management",
+        "action": "Created",
+        "entity": "u8",
+        "detail": "New user 'Client Beta' added with role Customer",
+        "ip": "192.168.1.10"
+    },
+    {
+        "id": "L003",
+        "timestamp": "2026-02-26T17:05:55",
+        "user": "Sara QA",
+        "user_id": "u5",
+        "module": "Quality",
+        "action": "Closed",
+        "entity": "QM002",
+        "detail": "NCR QM002 marked resolved — CAPA approved",
+        "ip": "192.168.1.33"
+    },
+    {
+        "id": "L004",
+        "timestamp": "2026-02-26T15:30:00",
+        "user": "Jane Engineer",
+        "user_id": "u2",
+        "module": "Projects",
+        "action": "Updated",
+        "entity": "P-003",
+        "detail": "Project status changed from At Risk to On Track",
+        "ip": "192.168.1.21"
+    },
+    {
+        "id": "L005",
+        "timestamp": "2026-02-26T14:11:22",
+        "user": "Linda PM",
+        "user_id": "u7",
+        "module": "Compliance",
+        "action": "Uploaded",
+        "entity": "QM004",
+        "detail": "New renewal doc uploaded for IATF 16949",
+        "ip": "192.168.1.45"
+    },
+    {
+        "id": "L006",
+        "timestamp": "2026-02-25T11:07:44",
+        "user": "Admin User",
+        "user_id": "u1",
+        "module": "User Management",
+        "action": "Deactivated",
+        "entity": "u6",
+        "detail": "User 'Mike Ops' deactivated",
+        "ip": "192.168.1.10"
+    },
+    {
+        "id": "L007",
+        "timestamp": "2026-02-25T09:55:18",
+        "user": "Sara QA",
+        "user_id": "u5",
+        "module": "Quality",
+        "action": "Created",
+        "entity": "QM003",
+        "detail": "CAPA created for wrong pin crimp issue",
+        "ip": "192.168.1.33"
+    },
+    {
+        "id": "L008",
+        "timestamp": "2026-02-24T16:40:01",
+        "user": "Jane Engineer",
+        "user_id": "u2",
+        "module": "Supply Chain",
+        "action": "Flagged",
+        "entity": "SC003",
+        "detail": "ChipForge Semi PO marked Delayed",
+        "ip": "192.168.1.21"
+    },
+    {
+        "id": "L009",
+        "timestamp": "2026-02-24T10:22:30",
+        "user": "Linda PM",
+        "user_id": "u7",
+        "module": "Project Tracking",
+        "action": "Created",
+        "entity": "PT005",
+        "detail": "New NPI project 'EV Charging Station' created",
+        "ip": "192.168.1.45"
+    },
+    {
+        "id": "L010",
+        "timestamp": "2026-02-23T14:05:09",
+        "user": "Admin User",
+        "user_id": "u1",
+        "module": "System Settings",
+        "action": "Updated",
+        "entity": "config",
+        "detail": "Notification frequency changed to hourly",
+        "ip": "192.168.1.10"
+    }
+]

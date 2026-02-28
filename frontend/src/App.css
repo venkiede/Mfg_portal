@@ -1,0 +1,134 @@
+/* App.css — Global utilities for Manufacturing Portal */
+
+/* Scrollbar hide */
+.scrollbar-hide::-webkit-scrollbar {
+    display: none;
+}
+
+.scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+/* ── Enterprise Table Design ──────────────────────────────────────────────── */
+.mfg-table {
+    width: 100%;
+    font-size: 0.8125rem;
+    /* 13px */
+    text-align: left;
+    border-collapse: collapse;
+}
+
+.mfg-table thead tr {
+    background-color: #f8fafc;
+    /* slate-50 */
+}
+
+.mfg-table thead th {
+    padding: 10px 20px;
+    font-size: 0.6875rem;
+    /* 11px */
+    font-weight: 600;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: #94a3b8;
+    /* slate-400 */
+    border-bottom: 1px solid #e2e8f0;
+    /* slate-200 */
+}
+
+.mfg-table tbody tr {
+    border-bottom: 1px solid #f1f5f9;
+    /* slate-100 */
+    transition: background-color 0.15s ease;
+}
+
+.mfg-table tbody tr:hover {
+    background-color: #f8fafc;
+    /* slate-50 */
+}
+
+.mfg-table tbody td {
+    padding: 10px 20px;
+    color: #475569;
+    /* slate-600 */
+    vertical-align: middle;
+}
+
+/* Dark mode table */
+@media (prefers-color-scheme: dark) {
+    .mfg-table thead tr {
+        background-color: #1e293b;
+    }
+
+    .mfg-table thead th {
+        color: #64748b;
+        border-bottom-color: #334155;
+    }
+
+    .mfg-table tbody tr {
+        border-bottom-color: #1e293b;
+    }
+
+    .mfg-table tbody tr:hover {
+        background-color: #1e293b;
+    }
+
+    .mfg-table tbody td {
+        color: #94a3b8;
+    }
+}
+
+/* Dark class-based */
+.dark .mfg-table thead tr {
+    background-color: #1e293b;
+}
+
+.dark .mfg-table thead th {
+    color: #64748b;
+    border-bottom-color: #334155;
+}
+
+.dark .mfg-table tbody tr {
+    border-bottom-color: #1e293b;
+}
+
+.dark .mfg-table tbody tr:hover {
+    background-color: #1e293b;
+}
+
+.dark .mfg-table tbody td {
+    color: #94a3b8;
+}
+
+/* ── Page header style ────────────────────────────────────────────────────── */
+.page-header-title {
+    font-size: 1.125rem;
+    font-weight: 600;
+    color: #1e293b;
+    letter-spacing: -0.01em;
+}
+
+.page-header-sub {
+    font-size: 0.8125rem;
+    color: #94a3b8;
+    margin-top: 2px;
+}
+
+/* ── KPI card accent bar ──────────────────────────────────────────────────── */
+.kpi-card {
+    position: relative;
+    overflow: hidden;
+}
+
+.kpi-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: currentColor;
+    opacity: 0.4;
+    border-radius: 999px 999px 0 0;
+}

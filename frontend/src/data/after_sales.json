@@ -1,0 +1,7 @@
+[
+  {"id":"AS001","rma_number":"RMA-2026-001","type":"RMA","category":"Hardware Defect","customer":"Global Motors","product":"Powertrain Module X","received_date":"2026-02-15","warranty_status":"In Warranty","tat_compliance":"On Track","turnaround_days":5,"sla_days":7,"status":"In Progress"},
+  {"id":"AS002","rma_number":"RMA-2026-002","type":"Warranty Claim","category":"Software Issue","customer":"Apex Aero","product":"Avionics Display Unit","received_date":"2026-02-10","warranty_status":"In Warranty","tat_compliance":"Met","turnaround_days":4,"sla_days":5,"status":"Closed"},
+  {"id":"AS003","rma_number":"RMA-2026-003","type":"RMA","category":"Component Failure","customer":"TechDrive","product":"Battery Controller","received_date":"2026-02-20","warranty_status":"Out of Warranty","tat_compliance":"On Track","turnaround_days":2,"sla_days":10,"status":"In Progress"},
+  {"id":"AS004","rma_number":"RMA-2026-004","type":"EOL Notice","category":"End of Life","customer":"EcoEnergy","product":"Inverter Unit V3","received_date":"2026-01-30","warranty_status":"N/A","tat_compliance":"Met","turnaround_days":3,"sla_days":14,"status":"Closed"},
+  {"id":"AS005","rma_number":"RMA-2026-005","type":"RMA","category":"Calibration","customer":"Precision Tooling","product":"CNC Controller Board","received_date":"2026-02-12","warranty_status":"In Warranty","tat_compliance":"Breached","turnaround_days":12,"sla_days":7,"status":"In Progress"}
+]

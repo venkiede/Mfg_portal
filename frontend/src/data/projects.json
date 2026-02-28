@@ -1,0 +1,48 @@
+[
+    {
+        "id": 1,
+        "name": "Website Redesign",
+        "manager": "Alice Smith",
+        "lifecycle_stage": "Production",
+        "due_date": "2026-04-15",
+        "status": "Delayed",
+        "progress": 75,
+        "updated_at": "2026-02-27T05:24:02.651499Z"
+    },
+    {
+        "id": 2,
+        "name": "Mobile App Launch",
+        "manager": "Bob Jones",
+        "lifecycle_stage": "NPI",
+        "due_date": "2026-03-20",
+        "status": "At Risk",
+        "progress": 40
+    },
+    {
+        "id": 3,
+        "name": "Database Migration",
+        "manager": "Charlie Brown",
+        "lifecycle_stage": "R&D",
+        "due_date": "2026-05-01",
+        "status": "Delayed",
+        "progress": 20
+    },
+    {
+        "id": 4,
+        "name": "Marketing Campaign",
+        "manager": "Diana Prince",
+        "lifecycle_stage": "Production",
+        "due_date": "2026-03-05",
+        "status": "On Track",
+        "progress": 90
+    },
+    {
+        "id": 5,
+        "name": "Security Audit",
+        "manager": "Evan Davis",
+        "lifecycle_stage": "Planning",
+        "due_date": "2026-06-30",
+        "status": "On Track",
+        "progress": 10
+    }
+]

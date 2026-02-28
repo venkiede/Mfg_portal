@@ -1,0 +1,20 @@
+[
+    {
+        "id": "d1cab4f9-4668-4ea3-a446-48d98862ed4e",
+        "type": "project_delay",
+        "message": "Project Website Redesign is now Delayed",
+        "related_entity_id": "1",
+        "created_at": "2026-02-27T05:24:02.651901Z",
+        "read_status": true,
+        "user_id": null
+    },
+    {
+        "id": "8c0d063e-ee0b-4408-9979-5a736d1c27d1",
+        "type": "project_delay",
+        "message": "Project Rag Builder is now Delayed",
+        "related_entity_id": "6",
+        "created_at": "2026-02-28T13:09:05.041233Z",
+        "read_status": true,
+        "user_id": null
+    }
+]

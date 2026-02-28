@@ -1,0 +1,27 @@
+[
+  {
+    "id": "u1",
+    "name": "Admin User",
+    "role": "Admin",
+    "permissions": ["all"]
+  },
+  {
+    "id": "u2",
+    "name": "Jane Engineer",
+    "role": "Engineer",
+    "permissions": ["view_assigned_projects", "edit_projects"]
+  },
+  {
+    "id": "u3",
+    "name": "Tom Viewer",
+    "role": "Viewer",
+    "permissions": ["view_all_projects"]
+  },
+  {
+    "id": "u4",
+    "name": "Client Acme",
+    "role": "Customer",
+    "permissions": ["view_own_projects"],
+    "allowed_project_ids": [1, 4]
+  }
+]

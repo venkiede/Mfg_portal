@@ -1,0 +1,187 @@
+[
+    {
+        "id": "PT001",
+        "project_name": "Gen-3 Hydraulic Control Unit",
+        "phase": "NPI",
+        "portfolio_health": "Green",
+        "owner": "Alice Morgan",
+        "start_date": "2025-10-01",
+        "target_date": "2026-06-30",
+        "progress": 62,
+        "milestones": [
+            {
+                "name": "Concept Freeze",
+                "due": "2025-11-15",
+                "status": "Completed"
+            },
+            {
+                "name": "Design Review",
+                "due": "2026-01-20",
+                "status": "Completed"
+            },
+            {
+                "name": "Proto Build",
+                "due": "2026-03-10",
+                "status": "In Progress"
+            },
+            {
+                "name": "Validation",
+                "due": "2026-05-01",
+                "status": "Pending"
+            },
+            {
+                "name": "Production Release",
+                "due": "2026-06-30",
+                "status": "Pending"
+            }
+        ],
+        "bom_count": 148,
+        "eco_logs": 3,
+        "dependencies": [
+            "PT003",
+            "PT005"
+        ],
+        "evidence_docs": 12
+    },
+    {
+        "id": "PT002",
+        "project_name": "Smart Sensor Module R&D",
+        "phase": "R&D",
+        "portfolio_health": "Yellow",
+        "owner": "Ben Clarke",
+        "start_date": "2025-12-01",
+        "target_date": "2026-09-30",
+        "progress": 28,
+        "milestones": [
+            {
+                "name": "Feasibility Study",
+                "due": "2026-01-31",
+                "status": "Completed"
+            },
+            {
+                "name": "IP Review",
+                "due": "2026-03-15",
+                "status": "In Progress"
+            },
+            {
+                "name": "Prototype",
+                "due": "2026-06-01",
+                "status": "Pending"
+            },
+            {
+                "name": "Test Report",
+                "due": "2026-08-01",
+                "status": "Pending"
+            }
+        ],
+        "bom_count": 34,
+        "eco_logs": 1,
+        "dependencies": [],
+        "evidence_docs": 4
+    },
+    {
+        "id": "PT003",
+        "project_name": "Robotic Arm Rev-2",
+        "phase": "Production",
+        "portfolio_health": "Green",
+        "owner": "Carol Wu",
+        "start_date": "2025-07-01",
+        "target_date": "2026-04-15",
+        "progress": 88,
+        "milestones": [
+            {
+                "name": "DFM Review",
+                "due": "2025-08-20",
+                "status": "Completed"
+            },
+            {
+                "name": "Line Validation",
+                "due": "2025-10-10",
+                "status": "Completed"
+            },
+            {
+                "name": "Mass Production",
+                "due": "2026-01-01",
+                "status": "Completed"
+            },
+            {
+                "name": "Shipment Ramp",
+                "due": "2026-04-15",
+                "status": "In Progress"
+            }
+        ],
+        "bom_count": 312,
+        "eco_logs": 7,
+        "dependencies": [],
+        "evidence_docs": 38
+    },
+    {
+        "id": "PT004",
+        "project_name": "Fuel Cell Stack Redesign",
+        "phase": "R&D",
+        "portfolio_health": "Red",
+        "owner": "David Osei",
+        "start_date": "2026-01-05",
+        "target_date": "2027-03-31",
+        "progress": 14,
+        "milestones": [
+            {
+                "name": "Tech Assessment",
+                "due": "2026-02-28",
+                "status": "Delayed"
+            },
+            {
+                "name": "Simulation Model",
+                "due": "2026-05-30",
+                "status": "Pending"
+            },
+            {
+                "name": "Material Sourcing",
+                "due": "2026-09-01",
+                "status": "Pending"
+            }
+        ],
+        "bom_count": 22,
+        "eco_logs": 0,
+        "dependencies": [
+            "PT002"
+        ],
+        "evidence_docs": 2
+    },
+    {
+        "id": "PT005",
+        "project_name": "EV Charging Station NPI",
+        "phase": "NPI",
+        "portfolio_health": "Yellow",
+        "owner": "Ella Santos",
+        "start_date": "2025-11-15",
+        "target_date": "2026-08-31",
+        "progress": 45,
+        "milestones": [
+            {
+                "name": "Architecture Sign-off",
+                "due": "2025-12-20",
+                "status": "Completed"
+            },
+            {
+                "name": "HW Proto",
+                "due": "2026-02-28",
+                "status": "Completed"
+            },
+            {
+                "name": "SW Integration",
+                "due": "2026-04-30",
+                "status": "In Progress"
+            },
+            {
+                "name": "Certification",
+                "due": "2026-07-15",
+                "status": "Pending"
+            }
+        ],
+        "bom_count": 89,
+        "eco_logs": 4,
+        "dependencies": [],
+        "evidence_docs": 17
+    }
+]
