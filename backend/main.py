@@ -18,10 +18,17 @@ from services.notification_service import ensure_notifications_file
 
 app = FastAPI(title="Manufacturing Portal API")
 
+import os
+
 # Configure CORS
 origins = [
     "http://localhost:3000",
 ]
+
+# Add production frontend URL from environment variable if set
+frontend_url = os.getenv("FRONTEND_URL")
+if frontend_url:
+    origins.append(frontend_url)
 
 app.add_middleware(
     CORSMiddleware,
