@@ -1,11 +1,11 @@
 import React, { useState, useEffect, useContext, useCallback } from 'react';
-import { useNavigate } from 'react-router-dom';
-import { ArrowLeft, CheckCircle2, XCircle, Clock, CheckSquare, Loader2 } from 'lucide-react';
+
+import { CheckCircle2, XCircle, Clock, CheckSquare, Loader2 } from 'lucide-react';
 import { Card } from '../../components/ui/Card';
 import { Badge } from '../../components/ui/Badge';
 import { AuthContext } from '../../context/AuthContext';
 import { PageLayout, PageHeader, PageActions, PageContent } from '../../components/ui/PageLayout';
-import { Button } from '../../components/ui/Button';
+
 
 import dataService from '../../services/dataService';
 
@@ -29,7 +29,7 @@ const typeStyle = {
 const statusVariant = s => s === 'Approved' ? 'success' : s === 'Rejected' ? 'danger' : 'warning';
 
 const ApprovalCenter = () => {
-    const navigate = useNavigate();
+
     const { user } = useContext(AuthContext);
     const [items, setItems] = useState([]);
     const [loading, setLoading] = useState(true);

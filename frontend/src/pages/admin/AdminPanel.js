@@ -2,7 +2,7 @@ import React, { useContext } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Users, ScrollText, CheckSquare, Shield } from 'lucide-react';
 import { AuthContext } from '../../context/AuthContext';
-import { Card, CardContent } from '../../components/ui/Card';
+import { Card } from '../../components/ui/Card';
 import { PageLayout, PageHeader, PageContent } from '../../components/ui/PageLayout';
 
 const TILES = [

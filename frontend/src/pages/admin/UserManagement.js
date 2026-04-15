@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useContext, useCallback } from 'react';
-import { useNavigate } from 'react-router-dom';
-import { Search, ChevronLeft, ChevronRight, ArrowLeft, UserPlus, Pencil, Trash2, ToggleLeft, ToggleRight, Loader2 } from 'lucide-react';
+
+import { Search, ChevronLeft, ChevronRight, UserPlus, Pencil, Trash2, ToggleLeft, ToggleRight, Loader2 } from 'lucide-react';
 import { Card } from '../../components/ui/Card';
 import { Badge } from '../../components/ui/Badge';
 import { AuthContext } from '../../context/AuthContext';
@@ -14,13 +14,13 @@ const ROLES = ['Admin', 'Engineer', 'Viewer', 'Customer'];
 const PAGE_SIZE = 6;
 
 const UserManagement = () => {
-    const navigate = useNavigate();
+
     const { user: currentUser } = useContext(AuthContext);
     const [users, setUsers] = useState([]);
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null);
     const [search, setSearch] = useState('');
-    const [roleFilter, setRoleFilter] = useState('All');
+    const [roleFilter] = useState('All');
     const [editId, setEditId] = useState(null);
     const [editRole, setEditRole] = useState('');
     const [page, setPage] = useState(1);

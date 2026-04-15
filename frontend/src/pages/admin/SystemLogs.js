@@ -1,10 +1,10 @@
 import React, { useState, useEffect, useContext } from 'react';
-import { useNavigate } from 'react-router-dom';
-import { Search, ChevronLeft, ChevronRight, ArrowLeft, ScrollText, Loader2 } from 'lucide-react';
+
+import { Search, ChevronLeft, ChevronRight, ScrollText, Loader2 } from 'lucide-react';
 import { Card } from '../../components/ui/Card';
 import { AuthContext } from '../../context/AuthContext';
 import { PageLayout, PageHeader, PageActions, PageContent } from '../../components/ui/PageLayout';
-import { Button } from '../../components/ui/Button';
+
 
 import dataService from '../../services/dataService';
 
@@ -24,7 +24,7 @@ const actionColor = a => {
 };
 
 const SystemLogs = () => {
-    const navigate = useNavigate();
+
     const { user } = useContext(AuthContext);
     const [logs, setLogs] = useState([]);
     const [loading, setLoading] = useState(true);
