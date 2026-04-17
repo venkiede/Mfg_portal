@@ -6,7 +6,7 @@ import {
     GitBranch, Activity, Star, Package, Wrench, MessageSquare,
     ChevronLeft, ChevronRight, Moon, Sun, Factory,
     LogOut, User as UserIcon, ChevronDown, Shield,
-    Users, ScrollText, CheckSquare
+    Users, ScrollText, CheckSquare, Menu, X
 } from 'lucide-react';
 import { AuthContext } from '../context/AuthContext';
 import { ThemeContext } from '../context/ThemeContext';
@@ -34,11 +34,12 @@ const ADMIN_NAV = [
 ];
 
 // ─── Reusable nav link ────────────────────────────────────────────────────────
-const NavLink = ({ item, isSidebarOpen, isActive }) => {
+const NavLink = ({ item, isSidebarOpen, isActive, onClick }) => {
     const Icon = item.icon;
     return (
         <Link
             to={item.path}
+            onClick={onClick}
             title={!isSidebarOpen ? item.label : undefined}
             className={cn(
                 'flex items-center gap-2.5 px-2.5 py-2 rounded-xl transition-all duration-200 whitespace-nowrap',
@@ -59,11 +60,12 @@ const NavLink = ({ item, isSidebarOpen, isActive }) => {
     );
 };
 
-const AdminNavLink = ({ item, isSidebarOpen, isActive }) => {
+const AdminNavLink = ({ item, isSidebarOpen, isActive, onClick }) => {
     const Icon = item.icon;
     return (
         <Link
             to={item.path}
+            onClick={onClick}
             title={!isSidebarOpen ? item.label : undefined}
             className={cn(
                 'flex items-center gap-2.5 px-2.5 py-2 rounded-xl transition-all duration-200 whitespace-nowrap',
@@ -90,7 +92,8 @@ const Layout = () => {
     const { isDark, toggleTheme } = useContext(ThemeContext);
     const location = useLocation();
     const navigate = useNavigate();
-    const [isSidebarOpen, setIsSidebarOpen] = useState(true);
+    const [isSidebarOpen, setIsSidebarOpen] = useState(window.innerWidth > 768);
+    const [isMobile, setIsMobile] = useState(window.innerWidth < 768);
     const [isUserMenuOpen, setIsUserMenuOpen] = useState(false);
     const userMenuRef = useRef(null);
 
@@ -99,8 +102,18 @@ const Layout = () => {
             if (userMenuRef.current && !userMenuRef.current.contains(e.target))
                 setIsUserMenuOpen(false);
         };
+        const handleResize = () => {
+            const mobile = window.innerWidth < 768;
+            setIsMobile(mobile);
+            if (!mobile) setIsSidebarOpen(true);
+            else setIsSidebarOpen(false);
+        };
         document.addEventListener('mousedown', handler);
-        return () => document.removeEventListener('mousedown', handler);
+        window.addEventListener('resize', handleResize);
+        return () => {
+            document.removeEventListener('mousedown', handler);
+            window.removeEventListener('resize', handleResize);
+        };
     }, []);
 
     const handleLogout = () => { logout(); navigate('/login'); };
@@ -111,11 +124,26 @@ const Layout = () => {
     return (
         <div className="flex h-screen w-full bg-slate-50 dark:bg-slate-950 transition-colors duration-300 overflow-hidden">
 
+            {/* ── Overlay for mobile ───────────────────────────────── */}
+            <AnimatePresence>
+                {isMobile && isSidebarOpen && (
+                    <motion.div
+                        initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}
+                        onClick={() => setIsSidebarOpen(false)}
+                        className="fixed inset-0 bg-slate-900/50 backdrop-blur-sm z-30"
+                    />
+                )}
+            </AnimatePresence>
+
             {/* ── Sidebar ──────────────────────────────────────────── */}
             <motion.aside
-                animate={{ width: isSidebarOpen ? 216 : 60 }}
+                initial={false}
+                animate={{ width: isSidebarOpen ? 216 : (isMobile ? 0 : 60) }}
                 transition={{ type: 'spring', stiffness: 320, damping: 32 }}
-                className="relative flex flex-col h-full bg-white dark:bg-slate-900 border-r border-slate-200 dark:border-slate-800 z-20 shrink-0 overflow-hidden"
+                className={cn(
+                    "flex flex-col h-full bg-white dark:bg-slate-900 z-40 shrink-0 overflow-hidden",
+                    isMobile ? "fixed left-0 top-0 bottom-0 shadow-2xl" : "relative border-r border-slate-200 dark:border-slate-800"
+                )}
             >
                 {/* Brand */}
                 <div className="h-14 flex items-center px-3 border-b border-slate-100 dark:border-slate-800 gap-2.5 whitespace-nowrap shrink-0">
@@ -137,7 +165,7 @@ const Layout = () => {
                 {/* Nav */}
                 <nav className="flex-1 py-3 px-2 flex flex-col gap-0.5 overflow-y-auto overflow-x-hidden">
                     {NAV.map(item => (
-                        <NavLink key={item.path} item={item} isSidebarOpen={isSidebarOpen} isActive={isNavActive(item.path)} />
+                        <NavLink key={item.path} item={item} isSidebarOpen={isSidebarOpen} isActive={isNavActive(item.path)} onClick={() => isMobile && setIsSidebarOpen(false)} />
                     ))}
 
                     {/* Admin-only section */}
@@ -149,29 +177,39 @@ const Layout = () => {
                                     : <div className="h-px bg-slate-200 dark:bg-slate-700" />}
                             </div>
                             {ADMIN_NAV.map(item => (
-                                <AdminNavLink key={item.path} item={item} isSidebarOpen={isSidebarOpen} isActive={isAdminNavActive(item.path)} />
+                                <AdminNavLink key={item.path} item={item} isSidebarOpen={isSidebarOpen} isActive={isAdminNavActive(item.path)} onClick={() => isMobile && setIsSidebarOpen(false)} />
                             ))}
                         </>
                     )}
                 </nav>
 
                 {/* Collapse toggle */}
-                <div className="p-2 border-t border-slate-100 dark:border-slate-800 shrink-0">
-                    <button
-                        onClick={() => setIsSidebarOpen(v => !v)}
-                        className="flex w-full items-center justify-center p-1.5 rounded-xl text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800 hover:text-slate-600 transition-all duration-200"
-                    >
-                        {isSidebarOpen ? <ChevronLeft size={16} /> : <ChevronRight size={16} />}
-                    </button>
-                </div>
+                {!isMobile && (
+                    <div className="p-2 border-t border-slate-100 dark:border-slate-800 shrink-0">
+                        <button
+                            onClick={() => setIsSidebarOpen(v => !v)}
+                            className="flex w-full items-center justify-center p-1.5 rounded-xl text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800 hover:text-slate-600 transition-all duration-200"
+                        >
+                            {isSidebarOpen ? <ChevronLeft size={16} /> : <ChevronRight size={16} />}
+                        </button>
+                    </div>
+                )}
             </motion.aside>
 
             {/* ── Main ─────────────────────────────────────────────── */}
             <main className="flex-1 flex flex-col min-w-0 overflow-hidden">
 
                 {/* Top bar */}
-                <header className="h-14 shrink-0 bg-white/90 dark:bg-slate-900/90 backdrop-blur-md border-b border-slate-200 dark:border-slate-800 flex items-center justify-between px-5 z-10">
-                    <div className="flex-1 pr-4 max-w-sm">
+                <header className="h-14 shrink-0 bg-white/90 dark:bg-slate-900/90 backdrop-blur-md border-b border-slate-200 dark:border-slate-800 flex items-center justify-between px-3 md:px-5 z-10 gap-3">
+                    {isMobile && (
+                        <button 
+                            onClick={() => setIsSidebarOpen(true)}
+                            className="p-2 -ml-2 rounded-xl text-slate-500 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors shrink-0"
+                        >
+                            <Menu size={20} />
+                        </button>
+                    )}
+                    <div className="flex-1 max-w-sm">
                         <GlobalSearch userId={user.id} />
                     </div>
                     <div className="flex items-center gap-2 shrink-0">
