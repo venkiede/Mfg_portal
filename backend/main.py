@@ -21,13 +21,12 @@ app = FastAPI(title="Manufacturing Portal API")
 import os
 
 # Configure CORS
-origins = [
-    "http://localhost:3000",
-]
+# allowing all origins to avoid CORS issues from Netlify initially
+origins = ["*"]
 
-# Add production frontend URL from environment variable if set
+# Add production frontend URL from environment variable if set (optional now that we allow "*")
 frontend_url = os.getenv("FRONTEND_URL")
-if frontend_url:
+if frontend_url and frontend_url not in origins:
     origins.append(frontend_url)
 
 app.add_middleware(
