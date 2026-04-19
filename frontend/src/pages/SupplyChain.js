@@ -131,19 +131,19 @@ const SupplyChain = () => {
 
                 {/* Table */}
                 <Card>
-                    <div className="overflow-x-auto">
+                    <div className="responsive-table-container custom-scrollbar">
                         <table className="w-full text-sm text-left">
                             <thead className="bg-slate-50 dark:bg-slate-800/50 text-xs uppercase tracking-wider text-slate-500 dark:text-slate-400 border-b border-slate-100 dark:border-slate-800">
                                 <tr>
                                     <th className="px-5 py-4 font-semibold">Vendor & Asset</th>
-                                    <th className="px-5 py-4 font-semibold">Category</th>
-                                    <th className="px-5 py-4 font-semibold text-center">Country</th>
-                                    <th className="px-5 py-4 font-semibold">Purchase Order</th>
+                                    <th className="px-5 py-4 font-semibold hide-on-mobile-th">Category</th>
+                                    <th className="px-5 py-4 font-semibold text-center hide-on-mobile-th">Country</th>
+                                    <th className="px-5 py-4 font-semibold hide-on-mobile-th">Purchase Order</th>
                                     <th className="px-5 py-4 font-semibold">Value</th>
                                     <th className="px-5 py-4 font-semibold text-center">Transit Status</th>
-                                    <th className="px-5 py-4 font-semibold w-32">Quality Index</th>
-                                    <th className="px-5 py-4 font-semibold w-32">Aggregated</th>
-                                    <th className="px-5 py-4 font-semibold text-center">Inv.</th>
+                                    <th className="px-5 py-4 font-semibold w-32 hide-on-mobile-th">Quality Index</th>
+                                    <th className="px-5 py-4 font-semibold w-32 hide-on-mobile-th">Aggregated</th>
+                                    <th className="px-5 py-4 font-semibold text-center hide-on-mobile-th">Inv.</th>
                                     <th className="px-5 py-4 font-semibold text-center">Lifecycle</th>
                                 </tr>
                             </thead>
@@ -156,14 +156,14 @@ const SupplyChain = () => {
                                             {r.supplier_name}
                                             <div className="text-xs text-slate-400 font-normal mt-0.5">{r.id}</div>
                                         </td>
-                                        <td className="px-5 py-4 text-slate-600 dark:text-slate-400">{r.part_category}</td>
-                                        <td className="px-5 py-4 text-center text-slate-600 dark:text-slate-400">{r.country}</td>
-                                        <td className="px-5 py-4 text-slate-500 dark:text-slate-400 font-mono text-xs">{r.po_number}</td>
+                                        <td className="px-5 py-4 text-slate-600 dark:text-slate-400 hide-on-mobile">{r.part_category}</td>
+                                        <td className="px-5 py-4 text-center text-slate-600 dark:text-slate-400 hide-on-mobile">{r.country}</td>
+                                        <td className="px-5 py-4 text-slate-500 dark:text-slate-400 font-mono text-xs hide-on-mobile">{r.po_number}</td>
                                         <td className="px-5 py-4 font-medium text-slate-900 dark:text-slate-100 tabular-nums">${(r.po_value_usd || 0).toLocaleString()}</td>
                                         <td className="px-5 py-4 text-center"><Badge variant={poVariant(r.po_status)}>{r.po_status}</Badge></td>
-                                        <td className="px-5 py-4"><ScoreBar val={r.quality_score} /></td>
-                                        <td className="px-5 py-4"><ScoreBar val={r.overall_score} /></td>
-                                        <td className="px-5 py-4 font-medium text-slate-900 dark:text-slate-100 tabular-nums text-center">{r.inventory_on_hand}</td>
+                                        <td className="px-5 py-4 hide-on-mobile"><ScoreBar val={r.quality_score} /></td>
+                                        <td className="px-5 py-4 hide-on-mobile"><ScoreBar val={r.overall_score} /></td>
+                                        <td className="px-5 py-4 font-medium text-slate-900 dark:text-slate-100 tabular-nums text-center hide-on-mobile">{r.inventory_on_hand}</td>
                                         <td className="px-5 py-4 text-center">
                                             <span className={`inline-flex items-center px-2 py-0.5 rounded-full text-xs font-medium ${lcStyle(r.lifecycle_status)}`}>
                                                 {r.lifecycle_status}

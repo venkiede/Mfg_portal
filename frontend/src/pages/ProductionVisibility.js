@@ -117,19 +117,19 @@ const ProductionVisibility = () => {
 
                 {/* Table */}
                 <Card>
-                    <div className="overflow-x-auto">
+                    <div className="responsive-table-container custom-scrollbar">
                         <table className="w-full text-sm text-left">
                             <thead className="bg-slate-50/80 dark:bg-slate-800/50 text-xs uppercase tracking-wider text-slate-500 dark:text-slate-400 border-b border-slate-100 dark:border-slate-800">
                                 <tr>
                                     <th className="px-5 py-4 font-semibold">Site / Line</th>
                                     <th className="px-5 py-4 font-semibold">Shift</th>
-                                    <th className="px-5 py-4 font-semibold">Date</th>
-                                    <th className="px-5 py-4 font-semibold text-center">WIP</th>
-                                    <th className="px-5 py-4 font-semibold text-center">Output</th>
-                                    <th className="px-5 py-4 font-semibold w-40">Yield %</th>
-                                    <th className="px-5 py-4 font-semibold w-40">Capacity %</th>
-                                    <th className="px-5 py-4 font-semibold text-center">Rework %</th>
-                                    <th className="px-5 py-4 font-semibold text-center">Defects</th>
+                                    <th className="px-5 py-4 font-semibold hide-on-mobile-th">Date</th>
+                                    <th className="px-5 py-4 font-semibold text-center hide-on-mobile-th">WIP</th>
+                                    <th className="px-5 py-4 font-semibold text-center hide-on-mobile-th">Output</th>
+                                    <th className="px-5 py-4 font-semibold w-24 sm:w-40">Yield %</th>
+                                    <th className="px-5 py-4 font-semibold w-24 sm:w-40">Capacity %</th>
+                                    <th className="px-5 py-4 font-semibold text-center hide-on-mobile-th">Rework %</th>
+                                    <th className="px-5 py-4 font-semibold text-center hide-on-mobile-th">Defects</th>
                                     <th className="px-5 py-4 font-semibold text-center">Status</th>
                                 </tr>
                             </thead>
@@ -143,15 +143,15 @@ const ProductionVisibility = () => {
                                             <div className="text-xs text-slate-400">{r.line}</div>
                                         </td>
                                         <td className="px-5 py-4">{r.shift}</td>
-                                        <td className="px-5 py-4 tabular-nums">{r.date}</td>
-                                        <td className="px-5 py-4 text-center tabular-nums">{r.wip_units}</td>
-                                        <td className="px-5 py-4 text-center tabular-nums">{r.output_units}</td>
+                                        <td className="px-5 py-4 hide-on-mobile">{r.date}</td>
+                                        <td className="px-5 py-4 text-center tabular-nums hide-on-mobile">{r.wip_units}</td>
+                                        <td className="px-5 py-4 text-center tabular-nums hide-on-mobile">{r.output_units}</td>
                                         <td className="px-5 py-4">
                                             <div className="flex items-center gap-3">
                                                 <div className="flex-1 h-1.5 bg-slate-100 dark:bg-slate-800 rounded-full overflow-hidden shadow-inner">
                                                     <div className={`h-full rounded-full ${yieldColor(r.yield_pct)}`} style={{ width: `${r.yield_pct}%` }} />
                                                 </div>
-                                                <span className="text-xs font-medium tabular-nums text-slate-700 dark:text-slate-300 w-10 text-right">{r.yield_pct}%</span>
+                                                <span className="text-[10px] sm:text-xs font-medium tabular-nums text-slate-700 dark:text-slate-300 w-8 sm:w-10 text-right">{r.yield_pct}%</span>
                                             </div>
                                         </td>
                                         <td className="px-5 py-4">
@@ -159,11 +159,11 @@ const ProductionVisibility = () => {
                                                 <div className="flex-1 h-1.5 bg-slate-100 dark:bg-slate-800 rounded-full overflow-hidden shadow-inner">
                                                     <div className={`h-full rounded-full ${capColor(r.capacity_utilization_pct)}`} style={{ width: `${r.capacity_utilization_pct}%` }} />
                                                 </div>
-                                                <span className="text-xs font-medium tabular-nums text-slate-700 dark:text-slate-300 w-10 text-right">{r.capacity_utilization_pct}%</span>
+                                                <span className="text-[10px] sm:text-xs font-medium tabular-nums text-slate-700 dark:text-slate-300 w-8 sm:w-10 text-right">{r.capacity_utilization_pct}%</span>
                                             </div>
                                         </td>
-                                        <td className="px-5 py-4 tabular-nums text-center font-medium">{r.rework_pct}%</td>
-                                        <td className="px-5 py-4 text-slate-900 dark:text-slate-100 tabular-nums text-center">{r.defects ?? '—'}</td>
+                                        <td className="px-5 py-4 tabular-nums text-center font-medium hide-on-mobile">{r.rework_pct}%</td>
+                                        <td className="px-5 py-4 text-slate-900 dark:text-slate-100 tabular-nums text-center hide-on-mobile">{r.defects ?? '—'}</td>
                                         <td className="px-5 py-4 text-center"><Badge variant={r.status === 'On Track' ? 'success' : r.status === 'At Risk' ? 'warning' : 'danger'}>{r.status}</Badge></td>
                                     </tr>
                                 ))}

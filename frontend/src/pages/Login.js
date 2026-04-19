@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import { Factory, Loader2, Mail, User, ChevronDown } from 'lucide-react';
 import { AuthContext } from '../context/AuthContext';
 
-const ROLES = ['Admin', 'Engineer', 'Viewer'];
+const ROLES = ['Admin', 'Engineer'];
 
 const Login = () => {
     const { login } = useContext(AuthContext);

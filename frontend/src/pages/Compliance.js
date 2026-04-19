@@ -239,12 +239,12 @@ const Compliance = () => {
                         <FileCheck size={17} className="text-blue-600" />
                         <h2 className="font-bold text-slate-900 dark:text-slate-100 tracking-tight">Certification Register</h2>
                     </div>
-                    <div className="overflow-x-auto">
+                    <div className="responsive-table-container custom-scrollbar">
                         <table className="w-full text-sm text-left">
                             <thead className="bg-slate-50/80 dark:bg-slate-800/50 text-xs uppercase tracking-wider text-slate-500 dark:text-slate-400 border-b border-slate-100 dark:border-slate-800">
                                 <tr>
                                     <th className="px-5 py-4 font-semibold text-slate-700 dark:text-slate-200">Certificate Name</th>
-                                    <th className="px-5 py-4 font-semibold text-slate-700 dark:text-slate-200 text-center">Standard</th>
+                                    <th className="px-5 py-4 font-semibold text-slate-700 dark:text-slate-200 text-center hide-on-mobile-th">Standard</th>
                                     <th className="px-5 py-4 font-semibold text-slate-700 dark:text-slate-200">Expiry Date</th>
                                     <th className="px-5 py-4 font-semibold text-slate-700 dark:text-slate-200 text-center">Status</th>
                                     <th className="px-5 py-4 font-semibold text-slate-700 dark:text-slate-200 text-right">Action</th>
@@ -254,7 +254,7 @@ const Compliance = () => {
                                 {records.map((cert) => (
                                     <tr key={cert.id} className="hover:bg-slate-50/50 dark:hover:bg-slate-800/40 transition-colors">
                                         <td className="px-5 py-4 font-medium text-slate-900 dark:text-slate-100">{cert.title}</td>
-                                        <td className="px-5 py-4 text-center">
+                                        <td className="px-5 py-4 text-center hide-on-mobile">
                                             <span className="px-2 py-0.5 rounded bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 text-xs font-medium">
                                                 {cert.standard}
                                             </span>
@@ -282,13 +282,13 @@ const Compliance = () => {
                         <ClipboardList size={17} className="text-blue-600" />
                         <h2 className="font-bold text-slate-900 dark:text-slate-100 tracking-tight">Recent Audits</h2>
                     </div>
-                    <div className="overflow-x-auto">
+                    <div className="responsive-table-container custom-scrollbar">
                         <table className="w-full text-sm text-left">
                             <thead className="bg-slate-50/80 dark:bg-slate-800/50 text-xs uppercase tracking-wider text-slate-500 dark:text-slate-400 border-b border-slate-100 dark:border-slate-800">
                                 <tr>
                                     <th className="px-5 py-4 table-header">Date</th>
                                     <th className="px-5 py-4 table-header">Audit Type</th>
-                                    <th className="px-5 py-4 table-header text-center">Findings</th>
+                                    <th className="px-5 py-4 table-header text-center hide-on-mobile-th">Findings</th>
                                     <th className="px-5 py-4 table-header text-center">Status</th>
                                 </tr>
                             </thead>
@@ -297,7 +297,7 @@ const Compliance = () => {
                                     <tr key={idx} className="hover:bg-slate-50/50 dark:hover:bg-slate-800/40 transition-colors">
                                         <td className="px-5 py-4 table-cell tabular-nums">{audit.date || "N/A"}</td>
                                         <td className="px-5 py-4 table-cell font-medium text-slate-900 dark:text-slate-100">{audit.type || "N/A"}</td>
-                                        <td className="px-5 py-4 text-center table-cell">
+                                        <td className="px-5 py-4 text-center table-cell hide-on-mobile">
                                             {audit.findings} finding{audit.findings !== 1 ? 's' : ''}
                                         </td>
                                         <td className="px-5 py-4 text-center"><Badge variant={statusVariant(audit.status)}>{audit.status || "N/A"}</Badge></td>

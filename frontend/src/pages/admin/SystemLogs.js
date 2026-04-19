@@ -88,7 +88,7 @@ const SystemLogs = () => {
                 </PageActions>
 
                 <Card className="overflow-hidden">
-                    <div className="overflow-x-auto">
+                    <div className="responsive-table-container custom-scrollbar">
                         <table className="w-full text-sm text-left">
                             <thead className="bg-slate-50/80 dark:bg-slate-800/50 text-xs uppercase tracking-wider text-slate-500 dark:text-slate-400 border-b border-slate-100 dark:border-slate-800">
                                 <tr>
@@ -96,7 +96,7 @@ const SystemLogs = () => {
                                     <th className="px-5 py-4 font-semibold">User</th>
                                     <th className="px-5 py-4 font-semibold">Module</th>
                                     <th className="px-5 py-4 font-semibold">Action</th>
-                                    <th className="px-5 py-4 font-semibold">Entity</th>
+                                    <th className="px-5 py-4 font-semibold hide-on-mobile-th">Entity</th>
                                     <th className="px-5 py-4 font-semibold">Detail</th>
                                 </tr>
                             </thead>
@@ -124,7 +124,7 @@ const SystemLogs = () => {
                                                 {l.action}
                                             </span>
                                         </td>
-                                        <td className="px-5 py-4 font-mono text-xs text-slate-600 dark:text-slate-400 font-medium">{l.entity}</td>
+                                        <td className="px-5 py-4 font-mono text-xs text-slate-600 dark:text-slate-400 font-medium hide-on-mobile">{l.entity}</td>
                                         <td className="px-5 py-4 text-slate-600 dark:text-slate-400 text-xs max-w-xs truncate font-medium" title={l.detail}>{l.detail}</td>
                                     </tr>
                                 ))}

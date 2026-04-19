@@ -125,16 +125,16 @@ const AfterSales = () => {
 
                 {/* Table */}
                 <Card>
-                    <div className="overflow-x-auto">
+                    <div className="responsive-table-container custom-scrollbar">
                         <table className="w-full text-sm text-left">
                             <thead className="bg-slate-50 dark:bg-slate-800/50 text-xs uppercase tracking-wider text-slate-500 dark:text-slate-400 border-b border-slate-100 dark:border-slate-800">
                                 <tr>
                                     <th className="px-5 py-4 font-semibold">RMA Ticket</th>
-                                    <th className="px-5 py-4 font-semibold">Category</th>
+                                    <th className="px-5 py-4 font-semibold hide-on-mobile-th">Category</th>
                                     <th className="px-5 py-4 font-semibold">Customer</th>
-                                    <th className="px-5 py-4 font-semibold">Product</th>
-                                    <th className="px-5 py-4 font-semibold text-center">Warranty</th>
-                                    <th className="px-5 py-4 font-semibold">Received</th>
+                                    <th className="px-5 py-4 font-semibold hide-on-mobile-th">Product</th>
+                                    <th className="px-5 py-4 font-semibold text-center hide-on-mobile-th">Warranty</th>
+                                    <th className="px-5 py-4 font-semibold hide-on-mobile-th">Received</th>
                                     <th className="px-5 py-4 font-semibold text-center whitespace-nowrap">TAT Compliance</th>
                                     <th className="px-5 py-4 font-semibold text-center">Outcome</th>
                                 </tr>
@@ -148,19 +148,19 @@ const AfterSales = () => {
                                             {r.rma_number}
                                             <div className="text-xs text-slate-400 font-normal mt-0.5">{r.id}</div>
                                         </td>
-                                        <td className="px-5 py-4">
+                                        <td className="px-5 py-4 hide-on-mobile">
                                             <span className={`inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium ${typeStyle[r.type] || 'bg-slate-100 text-slate-600'}`}>
                                                 {r.category || r.type || '—'}
                                             </span>
                                         </td>
                                         <td className="px-5 py-4 text-slate-900 dark:text-slate-100 font-medium">{r.customer}</td>
-                                        <td className="px-5 py-4 text-slate-600 dark:text-slate-400">{r.product}</td>
-                                        <td className="px-5 py-4 text-center">
+                                        <td className="px-5 py-4 text-slate-600 dark:text-slate-400 hide-on-mobile">{r.product}</td>
+                                        <td className="px-5 py-4 text-center hide-on-mobile">
                                             <span className="px-2 py-0.5 bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 text-xs font-medium rounded">
                                                 {r.warranty_status || r.warranty || '—'}
                                             </span>
                                         </td>
-                                        <td className="px-5 py-4 tabular-nums text-slate-600 dark:text-slate-400">{r.received_date}</td>
+                                        <td className="px-5 py-4 tabular-nums text-slate-600 dark:text-slate-400 hide-on-mobile">{r.received_date}</td>
                                         <td className="px-5 py-4 text-center">
                                             {r.tat_compliance ? (
                                                 <span className={`text-xs font-bold tracking-tight px-2 py-1 rounded-lg ${

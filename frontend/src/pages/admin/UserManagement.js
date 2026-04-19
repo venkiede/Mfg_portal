@@ -143,14 +143,14 @@ const UserManagement = () => {
 
                 {/* Users Table */}
                 <Card>
-                    <div className="overflow-x-auto">
+                    <div className="responsive-table-container custom-scrollbar">
                         <table className="w-full text-sm text-left">
                             <thead className="bg-slate-50/80 dark:bg-slate-800/50 text-xs uppercase tracking-wider text-slate-500 dark:text-slate-400 border-b border-slate-100 dark:border-slate-800">
                                 <tr>
                                     <th className="px-5 py-4 font-semibold">User</th>
-                                    <th className="px-5 py-4 font-semibold text-center">Department</th>
+                                    <th className="px-5 py-4 font-semibold text-center hide-on-mobile-th">Department</th>
                                     <th className="px-5 py-4 font-semibold">Role</th>
-                                    <th className="px-5 py-4 font-semibold">Last Login</th>
+                                    <th className="px-5 py-4 font-semibold hide-on-mobile-th">Last Login</th>
                                     <th className="px-5 py-4 font-semibold">Status</th>
                                     <th className="px-5 py-4 font-semibold text-right">Actions</th>
                                 </tr>
@@ -171,7 +171,7 @@ const UserManagement = () => {
                                                 </div>
                                             </div>
                                         </td>
-                                        <td className="px-5 py-4 text-center text-slate-600 dark:text-slate-400">
+                                        <td className="px-5 py-4 text-center text-slate-600 dark:text-slate-400 hide-on-mobile">
                                             <span className="px-2 py-1 bg-slate-100 dark:bg-slate-800 rounded text-xs font-medium text-slate-500">{u.department}</span>
                                         </td>
                                         <td className="px-5 py-4">
@@ -188,7 +188,7 @@ const UserManagement = () => {
                                                 <Badge>{u.role}</Badge>
                                             )}
                                         </td>
-                                        <td className="px-5 py-4 text-slate-500 dark:text-slate-400 tabular-nums">{u.last_login}</td>
+                                        <td className="px-5 py-4 text-slate-500 dark:text-slate-400 tabular-nums hide-on-mobile">{u.last_login}</td>
                                         <td className="px-5 py-4">
                                             <Badge variant={u.status === 'Active' ? 'success' : 'danger'}>{u.status}</Badge>
                                         </td>

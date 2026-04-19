@@ -220,15 +220,15 @@ const Projects = () => {
                 </PageActions>
 
                 <Card>
-                    <div className="overflow-x-auto">
+                    <div className="responsive-table-container custom-scrollbar">
                         <table className="w-full text-sm text-left">
                             <thead className="bg-slate-50 dark:bg-slate-800/50 text-slate-500 dark:text-slate-400 text-xs uppercase tracking-wider border-b border-slate-100 dark:border-slate-800">
                                 <tr>
                                     <th className="px-5 py-4 font-semibold text-slate-700 dark:text-slate-200">Project</th>
-                                    <th className="px-5 py-4 font-semibold text-slate-700 dark:text-slate-200">Manager</th>
+                                    <th className="px-5 py-4 font-semibold text-slate-700 dark:text-slate-200 hide-on-mobile-th">Manager</th>
                                     <th className="px-5 py-4 font-semibold text-slate-700 dark:text-slate-200">Lifecycle Stage</th>
                                     <th className="px-5 py-4 font-semibold text-slate-700 dark:text-slate-200">Health</th>
-                                    <th className="px-5 py-4 font-semibold text-slate-700 dark:text-slate-200">Due Date</th>
+                                    <th className="px-5 py-4 font-semibold text-slate-700 dark:text-slate-200 hide-on-mobile-th">Due Date</th>
                                     <th className="px-5 py-4 font-semibold text-slate-700 dark:text-slate-200 text-right">Actions</th>
                                 </tr>
                             </thead>
@@ -244,14 +244,14 @@ const Projects = () => {
                                     paginated.map((project) => (
                                         <tr key={project.id} className="group hover:bg-slate-50 dark:hover:bg-slate-800/40 transition-colors">
                                             <td className="px-5 py-4 font-medium text-slate-900 dark:text-slate-100">{project.name}</td>
-                                            <td className="px-5 py-4 text-slate-600 dark:text-slate-400">{project.manager}</td>
+                                            <td className="px-5 py-4 text-slate-600 dark:text-slate-400 hide-on-mobile">{project.manager}</td>
                                             <td className="px-5 py-4">
                                                 <span className={`inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium ${stageColor[project.lifecycle_stage] || stageColor['Planning']}`}>
                                                     {project.lifecycle_stage}
                                                 </span>
                                             </td>
                                             <td className="px-5 py-4"><Badge variant={healthVariant(project.status)}>{project.status}</Badge></td>
-                                            <td className="px-5 py-4 text-slate-500 tabular-nums">{project.due_date}</td>
+                                            <td className="px-5 py-4 text-slate-500 tabular-nums hide-on-mobile">{project.due_date}</td>
                                             <td className="px-5 py-4 text-right">
                                                 <div className="flex items-center justify-end gap-2">
                                                     <button

@@ -125,16 +125,16 @@ const QualityManagement = () => {
 
                 {/* Table */}
                 <Card>
-                    <div className="overflow-x-auto">
+                    <div className="responsive-table-container custom-scrollbar">
                         <table className="w-full text-sm text-left">
                             <thead className="bg-slate-50 dark:bg-slate-800/50 text-xs uppercase tracking-wider text-slate-500 dark:text-slate-400 border-b border-slate-100 dark:border-slate-800">
                                 <tr>
                                     <th className="px-5 py-4 font-semibold">Quality Record</th>
                                     <th className="px-5 py-4 font-semibold">Type</th>
-                                    <th className="px-5 py-4 font-semibold text-center">Standard</th>
-                                    <th className="px-5 py-4 font-semibold">Coordinator</th>
-                                    <th className="px-5 py-4 font-semibold">Audit Date</th>
-                                    <th className="px-5 py-4 font-semibold text-center">Findings</th>
+                                    <th className="px-5 py-4 font-semibold text-center hide-on-mobile-th">Standard</th>
+                                    <th className="px-5 py-4 font-semibold hide-on-mobile-th">Coordinator</th>
+                                    <th className="px-5 py-4 font-semibold hide-on-mobile-th">Audit Date</th>
+                                    <th className="px-5 py-4 font-semibold text-center hide-on-mobile-th">Findings</th>
                                     <th className="px-5 py-4 font-semibold text-center">Status</th>
                                 </tr>
                             </thead>
@@ -152,14 +152,14 @@ const QualityManagement = () => {
                                                 {r.type}
                                             </span>
                                         </td>
-                                        <td className="px-5 py-4 text-center">
+                                        <td className="px-5 py-4 text-center hide-on-mobile">
                                             <span className="px-2 py-0.5 bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 text-xs font-medium rounded">
                                                 {r.standard}
                                             </span>
                                         </td>
-                                        <td className="px-5 py-4 text-slate-600 dark:text-slate-400 font-medium">{r.owner}</td>
-                                        <td className="px-5 py-4 text-slate-500 dark:text-slate-400 tabular-nums">{r.issue_date}</td>
-                                        <td className="px-5 py-4 text-center font-medium text-slate-900 dark:text-slate-100 tabular-nums">{r.ncr_count}</td>
+                                        <td className="px-5 py-4 text-slate-600 dark:text-slate-400 font-medium hide-on-mobile">{r.owner}</td>
+                                        <td className="px-5 py-4 text-slate-500 dark:text-slate-400 tabular-nums hide-on-mobile">{r.issue_date}</td>
+                                        <td className="px-5 py-4 text-center font-medium text-slate-900 dark:text-slate-100 tabular-nums hide-on-mobile">{r.ncr_count}</td>
                                         <td className="px-5 py-4 text-center"><Badge variant={statusVariant(r.status)}>{r.status}</Badge></td>
                                     </tr>
                                 ))}

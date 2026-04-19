@@ -181,17 +181,17 @@ const ProjectTracking = () => {
 
                 {/* Table */}
                 <Card>
-                    <div className="overflow-x-auto">
+                    <div className="responsive-table-container custom-scrollbar">
                         <table className="w-full text-sm text-left">
                             <thead className="bg-slate-50 dark:bg-slate-800/50 text-xs uppercase tracking-wider text-slate-500 dark:text-slate-400 border-b border-slate-100 dark:border-slate-800">
                                 <tr>
                                     <th className="px-5 py-4 font-semibold">Project</th>
                                     <th className="px-5 py-4 font-semibold">Phase</th>
                                     <th className="px-5 py-4 font-semibold">Health</th>
-                                    <th className="px-5 py-4 font-semibold">Owner</th>
+                                    <th className="px-5 py-4 font-semibold hide-on-mobile-th">Owner</th>
                                     <th className="px-5 py-4 font-semibold w-44">Progress</th>
-                                    <th className="px-5 py-4 font-semibold text-center">BOM</th>
-                                    <th className="px-5 py-4 font-semibold text-center">ECOs</th>
+                                    <th className="px-5 py-4 font-semibold text-center hide-on-mobile-th">BOM</th>
+                                    <th className="px-5 py-4 font-semibold text-center hide-on-mobile-th">ECOs</th>
                                     <th className="px-5 py-4 font-semibold">Target Date</th>
                                 </tr>
                             </thead>
@@ -207,7 +207,7 @@ const ProjectTracking = () => {
                                             <span className={`inline-flex items-center px-2.5 py-0.5 rounded-full text-[11px] font-medium ${phaseColor(r.phase)}`}>{r.phase}</span>
                                         </td>
                                         <td className="px-5 py-4"><Badge variant={healthVariant(r.portfolio_health)}>{r.portfolio_health}</Badge></td>
-                                        <td className="px-5 py-4">{r.owner}</td>
+                                        <td className="px-5 py-4 hide-on-mobile">{r.owner}</td>
                                         <td className="px-5 py-4">
                                             <div className="flex items-center gap-2">
                                                 <div className="flex-1 h-1.5 bg-slate-100 dark:bg-slate-800 rounded-full overflow-hidden">
@@ -216,8 +216,8 @@ const ProjectTracking = () => {
                                                 <span className="text-xs font-semibold text-slate-600 dark:text-slate-400 w-8 text-right tabular-nums">{r.progress}%</span>
                                             </div>
                                         </td>
-                                        <td className="px-5 py-4 text-center font-medium">{r.bom_count ?? "—"}</td>
-                                        <td className="px-5 py-4 text-center font-medium">{r.eco_logs ?? "—"}</td>
+                                        <td className="px-5 py-4 text-center font-medium hide-on-mobile">{r.bom_count ?? "—"}</td>
+                                        <td className="px-5 py-4 text-center font-medium hide-on-mobile">{r.eco_logs ?? "—"}</td>
                                         <td className="px-5 py-4 tabular-nums">{r.target_date}</td>
                                     </tr>
                                 ))}

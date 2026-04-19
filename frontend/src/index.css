@@ -7,3 +7,29 @@
     @apply text-gray-800 bg-gray-50 dark:bg-gray-900 dark:text-gray-100 transition-colors duration-300 antialiased;
   }
 }
+
+@layer utilities {
+  /* Hide columns on mobile utilities */
+  .hide-on-mobile {
+    @apply hidden md:table-cell;
+  }
+
+  .hide-on-mobile-th {
+    @apply hidden md:table-cell;
+  }
+
+  /* Responsive table wrapper enhancement */
+  .responsive-table-container {
+    @apply overflow-x-auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  /* Custom scrollbar for mobile if needed */
+  .custom-scrollbar::-webkit-scrollbar {
+    height: 4px;
+    width: 4px;
+  }
+  .custom-scrollbar::-webkit-scrollbar-thumb {
+    @apply bg-slate-200 dark:bg-slate-800 rounded-full;
+  }
+}

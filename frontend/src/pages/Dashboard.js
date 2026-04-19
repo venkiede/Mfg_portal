@@ -209,15 +209,15 @@ const Dashboard = () => {
                             {error} — <button onClick={() => window.location.reload()} className="underline font-medium">Retry</button>
                         </div>
                     ) : (
-                        <div className="overflow-x-auto">
+                        <div className="responsive-table-container custom-scrollbar">
                             <table className="w-full text-sm text-left">
                                 <thead className="bg-slate-50 dark:bg-slate-800/50 text-xs uppercase tracking-wider text-slate-500 dark:text-slate-400 border-b border-slate-100 dark:border-slate-800">
                                     <tr>
                                         <th className="px-5 py-4 font-semibold">Project Name</th>
-                                        <th className="px-5 py-4 font-semibold">Customer</th>
-                                        <th className="px-5 py-4 font-semibold text-center">Status</th>
-                                        <th className="px-5 py-4 font-semibold w-64">Progress</th>
-                                        <th className="px-5 py-4 font-semibold text-right">Action</th>
+                                        <th className="px-3 sm:px-5 py-4 font-semibold hide-on-mobile-th">Customer</th>
+                                        <th className="px-3 sm:px-5 py-4 font-semibold text-center">Status</th>
+                                        <th className="px-3 sm:px-5 py-4 font-semibold w-40 sm:w-64">Progress</th>
+                                        <th className="px-3 sm:px-5 py-4 font-semibold text-right">Action</th>
                                     </tr>
                                 </thead>
                                 <tbody className="divide-y divide-slate-100 dark:divide-slate-800">
@@ -239,24 +239,24 @@ const Dashboard = () => {
                                                     onClick={() => navigate(`/project/${project.id}`)}
                                                     className="cursor-pointer group hover:bg-slate-50 dark:hover:bg-slate-800/40 transition-colors"
                                                 >
-                                                    <td className="px-5 py-5">
-                                                        <div className="font-semibold text-slate-800 dark:text-slate-100 group-hover:text-blue-600 transition-colors">
+                                                    <td className="px-3 sm:px-5 py-4 sm:py-5">
+                                                        <div className="font-semibold text-sm sm:text-base text-slate-800 dark:text-slate-100 group-hover:text-blue-600 transition-colors">
                                                             {project.name}
                                                         </div>
-                                                        <div className="text-xs text-slate-400 mt-0.5 font-normal">Due {project.due_date}</div>
+                                                        <div className="text-[10px] sm:text-xs text-slate-400 mt-0.5 font-normal">Due {project.due_date}</div>
                                                     </td>
-                                                    <td className="px-5 py-5">{project.manager}</td>
-                                                    <td className="px-5 py-5 text-center"><Badge>{project.status}</Badge></td>
-                                                    <td className="px-5 py-5">
-                                                        <div className="flex items-center gap-3">
-                                                            <div className="flex-1 h-2 bg-slate-100 dark:bg-slate-800 rounded-full overflow-hidden shadow-inner">
+                                                    <td className="px-3 sm:px-5 py-4 sm:py-5 hide-on-mobile text-xs sm:text-sm">{project.manager}</td>
+                                                    <td className="px-3 sm:px-5 py-4 sm:py-5 text-center"><Badge className="scale-75 sm:scale-100">{project.status}</Badge></td>
+                                                    <td className="px-3 sm:px-5 py-4 sm:py-5">
+                                                        <div className="flex items-center gap-2 sm:gap-3">
+                                                            <div className="flex-1 h-1.5 sm:h-2 bg-slate-100 dark:bg-slate-800 rounded-full overflow-hidden shadow-inner">
                                                                 <div className={`h-full rounded-full ${barColor(project.status)} shadow-sm`} style={{ width: `${project.progress}%` }} />
                                                             </div>
-                                                            <span className="text-xs font-bold tabular-nums text-slate-600 dark:text-slate-400 w-10 text-right">{project.progress}%</span>
+                                                            <span className="text-[10px] sm:text-xs font-bold tabular-nums text-slate-600 dark:text-slate-400 w-8 sm:w-10 text-right">{project.progress}%</span>
                                                         </div>
                                                     </td>
-                                                    <td className="px-5 py-5 text-right">
-                                                        <span className="inline-flex items-center justify-center w-8 h-8 rounded-full bg-slate-100 dark:bg-slate-800 text-slate-400 group-hover:bg-blue-600 group-hover:text-white transition-all shadow-sm">
+                                                    <td className="px-3 sm:px-5 py-4 sm:py-5 text-right">
+                                                        <span className="inline-flex items-center justify-center w-7 h-7 sm:w-8 sm:h-8 rounded-full bg-slate-100 dark:bg-slate-800 text-slate-400 group-hover:bg-blue-600 group-hover:text-white transition-all shadow-sm">
                                                             <ChevronRight size={14} strokeWidth={3} />
                                                         </span>
                                                     </td>

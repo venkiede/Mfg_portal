@@ -124,18 +124,18 @@ const Collaboration = () => {
 
                 {/* Table */}
                 <Card>
-                    <div className="overflow-x-auto">
+                    <div className="responsive-table-container custom-scrollbar">
                         <table className="w-full text-sm text-left">
                             <thead className="bg-slate-50 dark:bg-slate-800/50 text-xs uppercase tracking-wider text-slate-500 dark:text-slate-400 border-b border-slate-100 dark:border-slate-800">
                                 <tr>
                                     <th className="px-5 py-4 font-semibold">Asset Title</th>
                                     <th className="px-5 py-4 font-semibold">Type</th>
-                                    <th className="px-5 py-4 font-semibold">Author</th>
-                                    <th className="px-5 py-4 font-semibold text-center whitespace-nowrap">Creation Date</th>
-                                    <th className="px-5 py-4 font-semibold">Metadata</th>
-                                    <th className="px-5 py-4 font-semibold text-center">Replies</th>
-                                    <th className="px-5 py-4 font-semibold text-center">Approval</th>
-                                    <th className="px-5 py-4 font-semibold text-center whitespace-nowrap">SLA (hrs)</th>
+                                    <th className="px-5 py-4 font-semibold hide-on-mobile-th">Author</th>
+                                    <th className="px-5 py-4 font-semibold text-center whitespace-nowrap hide-on-mobile-th">Creation Date</th>
+                                    <th className="px-5 py-4 font-semibold hide-on-mobile-th">Metadata</th>
+                                    <th className="px-5 py-4 font-semibold text-center hide-on-mobile-th">Replies</th>
+                                    <th className="px-5 py-4 font-semibold text-center hide-on-mobile-th">Approval</th>
+                                    <th className="px-5 py-4 font-semibold text-center whitespace-nowrap hide-on-mobile-th">SLA (hrs)</th>
                                     <th className="px-5 py-4 font-semibold text-center">Lifecycle</th>
                                 </tr>
                             </thead>
@@ -153,9 +153,9 @@ const Collaboration = () => {
                                                 {r.type || '—'}
                                             </span>
                                         </td>
-                                        <td className="px-5 py-4">{r.author || '—'}</td>
-                                        <td className="px-5 py-4 text-center tabular-nums">{r.date || "N/A"}</td>
-                                        <td className="px-5 py-4">
+                                        <td className="px-5 py-4 hide-on-mobile">{r.author || '—'}</td>
+                                        <td className="px-5 py-4 text-center tabular-nums hide-on-mobile">{r.date || "N/A"}</td>
+                                        <td className="px-5 py-4 hide-on-mobile">
                                             <div className="flex flex-wrap gap-1.5">
                                                 {(r.metadata?.tags || r.tags || []).map(t => (
                                                     <span key={t} className="px-2 py-0.5 bg-slate-100 dark:bg-slate-800 text-slate-500 dark:text-slate-400 text-xs font-medium rounded uppercase tracking-tight">
@@ -170,8 +170,8 @@ const Collaboration = () => {
                                                 {(!r.metadata?.tags?.length && !r.tags?.length && !r.metadata) && <span className="text-slate-400">—</span>}
                                             </div>
                                         </td>
-                                        <td className="px-5 py-4 text-center font-medium tabular-nums">{r.replies ?? "—"}</td>
-                                        <td className="px-5 py-4 text-center">
+                                        <td className="px-5 py-4 text-center font-medium tabular-nums hide-on-mobile">{r.replies ?? "—"}</td>
+                                        <td className="px-5 py-4 text-center hide-on-mobile">
                                             {r.approval ? (
                                                 <span className="text-xs font-medium">{r.approval}</span>
                                             ) : r.approval_required ? (
@@ -180,7 +180,7 @@ const Collaboration = () => {
                                                 <span className="text-slate-300 dark:text-slate-700">—</span>
                                             )}
                                         </td>
-                                        <td className="px-5 py-4 text-center font-medium tabular-nums">{r.sla_hours ?? '—'}</td>
+                                        <td className="px-5 py-4 text-center font-medium tabular-nums hide-on-mobile">{r.sla_hours ?? '—'}</td>
                                         <td className="px-5 py-4 text-center"><Badge variant={statusVariant(r.lifecycle || r.status)}>{r.lifecycle || r.status || '—'}</Badge></td>
                                     </tr>
                                 ))}
